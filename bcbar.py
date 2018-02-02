@@ -32,15 +32,22 @@ soup = BeautifulSoup(page.content, 'html.parser')
 data = []
 for paragraph in soup.find_all('td'):
     data.append(paragraph.string)
-coins_2b_mined = (data[7].replace(',','')) #data[1] is the Coins remaining to be Mined. replace() removes the ',' from the string. int() coverts the string into an into
+
+disp = [0]*38
+for x in range(len(data)):
+    if x % 2 == 0:
+        disp[x] = data[x] + data[x+1].replace(',','')
+
+
+
+#coins_2b_mined = (data[7].replace(',','')) #data[1] is the Coins remaining to be Mined. replace() removes the ',' from the string. int() coverts the string into an into
 #coins_2b_mined = data[7]  #Valuw with commas does not look neat on Dot Matrix display.
-print (coins_2b_mined)
+
 
 serial = spi(port=0, device=0, gpio=noop())
 device = max7219(serial, cascaded=4 , block_orientation=-90, rotate=2)
 
 show_message(device, data[6] + coins_2b_mined, fill="white", font=proportional(LCD_FONT),scroll_delay = 0.04)
-
 
 ##with canvas(device) as draw:
 ##    text(draw, (0, 0), msg, fill="white", font=proportional(LCD_FONT))
