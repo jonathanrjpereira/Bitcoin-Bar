@@ -55,7 +55,19 @@ Bitcoin Bar can display the following real time data parameters:
 |Hash rate|22.00 Exahashes/s|18|
 
 **Scrolling Speed & Static Text**
+
 By adjusting the value of `scroll_delay`, the scrolling speed can be changed. The `led_test.py`example uses the `text` function to display static text.
 
 **Fonts**
+
 The Python Library for Max7219 LED Matrix by Richard Hull comes with four inbuilt fonts: Sinclair, CP437, LCD, & Tiny. These fonts have different pixel area usage. More fonts may be added in the future & If you require a custom font for a specific purpose, I recommend checking out the GitHub Library.
+
+## Future Updates
+
+ - BTC Conversion to other Currencies
+ - Satoshis & LN
+ - 7 Segment Font 
+
+## Contributing
+
+Are you a programmer, engineer or designer who has a great idea for a new feature in Bitcoin Bar? Maybe you have a good idea for a bug fix? Feel free to grab our code, schematics & CAD files from Github and tinker with it.
