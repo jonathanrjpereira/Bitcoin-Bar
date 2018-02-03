@@ -17,7 +17,7 @@ Bitcoin Bar runs on a Raspberry Pi & uses a Dot LED Matrix display.
 
 **Python Library for Max7219 LED Matrix:**
 
-Python library interfacing LED matrix displays with the MAX7219 driver (using SPI) on the Raspberry Pi. [Installation](https://luma-led-matrix.readthedocs.io/en/latest/install.html)
+Python library interfacing LED matrix displays with the MAX7219 driver (using SPI) on the Raspberry Pi. [Installation.](https://luma-led-matrix.readthedocs.io/en/latest/install.html) [ By Richard Hull](https://github.com/rm-hull/luma.led_matrix)
 
 ## Setup & Configurations
 Once all the Prerequisties have been successfully installed, download/clone this GitHub Repository. Connect the Display to the Raspberry Pi as shown in the Schematics. Run the main program `bcbar.py`
@@ -53,3 +53,9 @@ Bitcoin Bar can display the following real time data parameters:
 |Approximate blocks generated per day|144|16|
 |Difficulty|2,603,077,300,219|17|
 |Hash rate|22.00 Exahashes/s|18|
+
+**Scrolling Speed & Static Text**
+By adjusting the value of `scroll_delay`, the scrolling speed can be changed. The `led_test.py`example uses the `text` function to display static text.
+
+**Fonts**
+The Python Library for Max7219 LED Matrix by Richard Hull comes with four inbuilt fonts: Sinclair, CP437, LCD, & Tiny. These fonts have different pixel area usage. More fonts may be added in the future & If you require a custom font for a specific purpose, I recommend checking out the GitHub Library.
