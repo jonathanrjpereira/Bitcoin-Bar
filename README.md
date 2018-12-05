@@ -1,4 +1,4 @@
-![Logo](https://github.com/jonathanrjpereira/Bitcoin-Bar/blob/master/img/Logo.png)
+![Logo](https://github.com/jonathanrjpereira/Bitcoin-Bar/blob/master/img/BannerSmallAsset%202.png)
 
 Bitcoin Bar is a physical notfication bar which displays real time Bitcoin data.
 It can display upto 19 different real time Bitcoin data parameters.
