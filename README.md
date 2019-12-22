@@ -18,7 +18,8 @@ Bitcoin Bar runs on a Raspberry Pi & uses a Dot LED Matrix display.
 
 **Python Library for Max7219 LED Matrix:**
 
-Python library interfacing LED matrix displays with the MAX7219 driver (using SPI) on the Raspberry Pi. [Installation.](https://luma-led-matrix.readthedocs.io/en/latest/install.html) [ By Richard Hull](https://github.com/rm-hull/luma.led_matrix)
+Python library interfacing LED matrix displays with the MAX7219 driver (using SPI) on the Raspberry Pi. [Installation.](https://luma-led-matrix.readthedocs.io/en/latest/install.html) [ By Richard Hull](https://github.com/rm-hull/luma.led_matrix).
+
 We also developed a new '7seg' font that is a condensed font used for scrolling displays that can only display numerical digits and is compatible with the MAX7219 driver. The 7Seg font allows one to display more digits on a single display unit.  
 
 ## Setup & Configurations
