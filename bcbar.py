@@ -1,4 +1,4 @@
-# py -2 bcbar.py 
+# py -2 bcbar.py
 
 # Web Scraping Prerequisites
 import requests
@@ -27,12 +27,16 @@ while(1):
         data.append(paragraph.string)
 
 
-    disp = [0]*38 #38 is the length of the list data
+    disp = [0]*38   #38 is the length of the list data
     for x in range(len(data)):
         if x % 2 == 0:
-            disp[x] = data[x] + " " + data[x+1].replace(',','') #Each element of disp is the Name of the parameter & its value. The commas present in the values have been removed for better displaying asthetics
-    #       disp[x] = data[x] + " " + data[x+1] #Display with commas
-            
+            disp.append(data[x])
+            if data[x+1] == None:
+                disp.append(data[x+1])
+            else:                
+                disp.append((data[x+1]).replace(',',''))    #Each element of disp is the Name of the parameter & its value. The commas present in the values have been removed for better displaying asthetics
+
+
     disp = list(filter(lambda a:a != 0, disp)) #For some reason every odd element of the list 'disp' is '0'. This removes all occurences of '0' from the list 'disp'
     #Remove 'list' in Python2.7
 
@@ -42,7 +46,6 @@ while(1):
 
     for i in range(len(disp)):
         show_message(device, disp[i], fill="white", font=proportional(LCD_FONT),scroll_delay = 0.02) #Change the value of 'scroll_delay' to change the Scrolling Speed
-        
+
     #show_message(device, disp[4], fill="white", font=proportional(LCD_FONT),scroll_delay = 0.02) # '4' indicates Displays the number of Bitcoins left to mine.
     #Change this value according to the table to display various data parameters
-
