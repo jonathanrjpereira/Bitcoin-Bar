@@ -30,14 +30,13 @@ while(1):
     disp = [0]*38   #38 is the length of the list data
     for x in range(len(data)):
         if x % 2 == 0:
-            disp.append(data[x])
-            if data[x+1] == None:
+            if data[x+1] != None:
+                disp.append(data[x])
                 disp.append(data[x+1])
-            else:                
-                disp.append((data[x+1]).replace(',',''))    #Each element of disp is the Name of the parameter & its value. The commas present in the values have been removed for better displaying asthetics
 
 
     disp = list(filter(lambda a:a != 0, disp)) #For some reason every odd element of the list 'disp' is '0'. This removes all occurences of '0' from the list 'disp'
+    disp = list(filter(lambda a:a != None, disp)) #If an element is missing, it shows as 'None' and crashes the script. This removes all occurences of 'None' from the list 'disp'
     #Remove 'list' in Python2.7
 
 
