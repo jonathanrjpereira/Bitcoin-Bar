@@ -36,12 +36,11 @@ while(1):
 
 
     disp = list(filter(lambda a:a != 0, disp)) #For some reason every odd element of the list 'disp' is '0'. This removes all occurences of '0' from the list 'disp'
-    disp = list(filter(lambda a:a != None, disp)) #If an element is missing, it shows as 'None' and crashes the script. This removes all occurences of 'None' from the list 'disp'
     #Remove 'list' in Python2.7
 
 
     serial = spi(port=0, device=0, gpio=noop())
-    device = max7219(serial, cascaded=4 , block_orientation=-90, rotate=2)
+    device = max7219(serial, cascaded=8 , block_orientation=-90, rotate=2)
 
     for i in range(len(disp)):
         show_message(device, disp[i], fill="white", font=proportional(LCD_FONT),scroll_delay = 0.02) #Change the value of 'scroll_delay' to change the Scrolling Speed
