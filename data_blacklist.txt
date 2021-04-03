@@ -1,0 +1,2 @@
+Bitcoin inflation rate per annum at next block halving event:
+Approximate block generation time:

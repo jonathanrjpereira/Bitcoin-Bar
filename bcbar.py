@@ -14,6 +14,9 @@ from luma.core.legacy import text, show_message
 from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT, SINCLAIR_FONT, LCD_FONT
 
 quotes_file = open('quotes.txt', 'r')
+blacklist_file = open('data_blacklist.txt', 'r')
+
+blacklist = blacklist_file.readlines()
 
 while(1):
 
@@ -31,7 +34,7 @@ while(1):
     disp = [0]*38   #38 is the length of the list data
     for x in range(len(data)):
         if x % 2 == 0:
-            if data[x+1] != None:
+            if data[x+1] != None and data[x]+'\n' not in blacklist:
                 disp.append(data[x])
                 disp.append(data[x+1])
 
