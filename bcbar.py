@@ -37,6 +37,7 @@ while(1):
 
 
     disp = list(filter(lambda a:a != 0, disp)) #For some reason every odd element of the list 'disp' is '0'. This removes all occurences of '0' from the list 'disp'
+
     #Remove 'list' in Python2.7
     new_quote = quotes_file.readline()
     if new_quote == '':
@@ -45,8 +46,6 @@ while(1):
 
 
     disp.insert(0, new_quote)
-
-    #print(disp)
 
     serial = spi(port=0, device=0, gpio=noop())
     device = max7219(serial, cascaded=8 , block_orientation=-90, rotate=2)
