@@ -38,7 +38,13 @@ while(1):
 
     disp = list(filter(lambda a:a != 0, disp)) #For some reason every odd element of the list 'disp' is '0'. This removes all occurences of '0' from the list 'disp'
     #Remove 'list' in Python2.7
-    disp.insert(0, quotes_file.readline())
+    new_quote = quotes_file.readline()
+    if new_quote == '':
+        quotes_file = open('quotes.txt', 'r')
+        new_quote = quotes_file.readline()
+
+
+    disp.insert(0, new_quote)
 
     #print(disp)
 
