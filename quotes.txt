@@ -1,4 +1,3 @@
-"Bitcoin is the most important invention in the history of the world since the Internet." - Roger Ver
 "The computer can be used as a tool to liberate and protect people, rather than to control them." - Hal Finney
 "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks." - Bitcoin Blockchain
 "I think that the Internet is going to be one of the major forces for reducing the role of government." - Milton Friedman
@@ -21,4 +20,4 @@
 "Bitcoin is the beginning of something great: a currency without a government, something necessary and imperative" - Nassim Taleb
 "I think the internet is going to be one of the major forces for reducing the role of government. The one thing that's missing but that will soon be developed, is a reliable e-cash" - Milton Friedman
 "It's money 2.0, a huge huge huge deal" - Chamath Palihapitiya
-
+"Bitcoin is the most important invention in the history of the world since the Internet." - Roger Ver
