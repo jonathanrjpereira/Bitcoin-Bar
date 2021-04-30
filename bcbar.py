@@ -13,6 +13,10 @@ from luma.core.virtual import viewport
 from luma.core.legacy import text, show_message
 from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT, SINCLAIR_FONT, LCD_FONT
 
+quotes_file = open('quotes.txt', 'r')
+blacklist_file = open('data_blacklist.txt', 'r')
+
+blacklist = blacklist_file.readlines()
 
 while(1):
 
@@ -30,19 +34,24 @@ while(1):
     disp = [0]*38   #38 is the length of the list data
     for x in range(len(data)):
         if x % 2 == 0:
-            disp.append(data[x])
-            if data[x+1] == None:
+            if data[x+1] != None and data[x]+'\n' not in blacklist:
+                disp.append(data[x])
                 disp.append(data[x+1])
-            else:                
-                disp.append((data[x+1]).replace(',',''))    #Each element of disp is the Name of the parameter & its value. The commas present in the values have been removed for better displaying asthetics
 
 
     disp = list(filter(lambda a:a != 0, disp)) #For some reason every odd element of the list 'disp' is '0'. This removes all occurences of '0' from the list 'disp'
-    #Remove 'list' in Python2.7
 
+    #Remove 'list' in Python2.7
+    new_quote = quotes_file.readline()
+    if new_quote == '':
+        quotes_file = open('quotes.txt', 'r')
+        new_quote = quotes_file.readline()
+
+
+    disp.insert(0, new_quote)
 
     serial = spi(port=0, device=0, gpio=noop())
-    device = max7219(serial, cascaded=4 , block_orientation=-90, rotate=2)
+    device = max7219(serial, cascaded=8 , block_orientation=-90, rotate=2)
 
     for i in range(len(disp)):
         show_message(device, disp[i], fill="white", font=proportional(LCD_FONT),scroll_delay = 0.02) #Change the value of 'scroll_delay' to change the Scrolling Speed
