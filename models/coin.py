@@ -19,4 +19,4 @@ class Coin:
         
         
     def to_string(self):  
-        return '{0} - ${1} - {2}{3}%'.format(self.symbol, self.priceString, "+" if self.percentage > 0 else "-" ,round(self.percentage, 2))
+        return '{0} - ${1} ({2}{3}%)'.format(self.symbol, self.priceString, "+" if self.percentage > 0 else "-" ,round(self.percentage, 2))
