@@ -14,7 +14,7 @@ class Coin:
         self.volumeUsd24Hr = volumeUsd24Hr
         self.price = Decimal(priceUsd)
         self.priceRounded = self.price.quantize(Decimal(".01"), rounding=ROUND_HALF_UP)
-        self.priceString = locale.currency(self.priceRounded), grouping=True, symbol=False)
+        self.priceString = locale.currency(self.priceRounded, grouping=True, symbol=False)
         self.percentage = Decimal(changePercent24Hr)
         
         
