@@ -16,9 +16,9 @@ def output_msg(msg):
     w, h = textsize(msg, FONT)
     if w <= DEVICE.width:
         # output fits screen, show static text
-        x = round((device.width - w) / 2)
-        with canvas(device) as draw:
+        x = round((DEVICE.width - w) / 2)
+        with canvas(DEVICE) as draw:
             text(draw, (x, 0), msg, fill="white", font=FONT)
     else:
         # output doesn't fit screen => marquee
-        show_message(device, msg, fill="white", font=FONT, scroll_delay=0.06)
+        show_message(DEVICE, msg, fill="white", font=FONT, scroll_delay=0.06)
