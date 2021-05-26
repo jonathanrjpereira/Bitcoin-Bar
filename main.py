@@ -1,4 +1,5 @@
 from services.crypto import get_token
+from services.led import output_msg
 
 def main():
     last_price = -1
@@ -7,9 +8,9 @@ def main():
     
         if coin.price != last_price:
             #todo something special if price changed
-            print(coin.to_string())
+            output_msg(coin.to_string())
             last_price = coin.price
         else:
-            print(coin.to_string())
+            output_msg(coin.to_string())
 
 main()
